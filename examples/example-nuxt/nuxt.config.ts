@@ -1,6 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  preset: 'netlify_edge',
+  nitro: {
+    preset: 'netlify_edge',
+  },
   modules: ['@posthog/nuxt'],
   compatibilityDate: '2025-11-03',
   posthogConfig: {
@@ -15,7 +17,7 @@ export default defineNuxtConfig({
       enableExceptionAutocapture: true,
     },
     sourcemaps: {
-      enabled: true,
+      enabled: false,
       version: '3',
       logLevel: 'debug',
       envId: process.env.POSTHOG_PROJECT_ID!,
